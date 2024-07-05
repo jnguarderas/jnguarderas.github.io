@@ -1,0 +1,26 @@
+name: HTML Proofer
+
+on:
+  push:
+    branches:
+      - main # Flujo de trabajo el 30 de mayo
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.4
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+      - name: Build the site
+        run: bundle exec jekyll build
+      - name: Check for broken links
+        run: bundle exec htmlproofer ./_site
