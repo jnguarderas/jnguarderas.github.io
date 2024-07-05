@@ -26,7 +26,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 baseurl: "/jnguarderas.github.io" # the subpath of your site, e.g. /blog
 url: "https://jnguarderas.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  jnguarderas
+github_username: jnguarderas
 
 # Build settings
 theme: minima
